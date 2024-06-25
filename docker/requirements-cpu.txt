@@ -18,3 +18,4 @@ accelerate
 torch
 torchvision
 torchaudio
+selenium
