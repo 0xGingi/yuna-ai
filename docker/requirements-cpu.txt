@@ -19,3 +19,4 @@ torch
 torchvision
 torchaudio
 selenium
+webdriver_manager
