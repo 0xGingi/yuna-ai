@@ -1,12 +1,10 @@
-FROM python:3.12-bookworm
+FROM rocm/dev-ubuntu-22.04
 
 WORKDIR /app
 
 ADD . /app
 
-RUN apt-get update && apt-get install -y build-essential cmake libomp-dev
-
-RUN apt-get update && apt-get install -y ffmpeg
+RUN apt-get update && apt-get install -y python3 build-essential cmake libomp-dev ffmpeg
 
 RUN CMAKE_ARGS="-DLLAMA_HIPBLAS=ON" pip install llama-cpp-python
 
