@@ -4,7 +4,7 @@ WORKDIR /app
 
 ADD . /app
 
-RUN pip install --no-cache-dir -r docker/requirements.txt
+RUN pip install --no-cache-dir -r docker/requirements-cpu.txt
 
 EXPOSE 4848
 
