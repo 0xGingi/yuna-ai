@@ -112,14 +112,14 @@ mkdir ~/models/agi
 Pull the docker container:
 ```
 docker pull 0xgingi/yuna-ai:latest # For x86_64 CPU
-docker pull 0xgingi/yuna-ai:mps  # For arm64 apple silicon
+docker pull 0xgingi/yuna-ai:metal  # For arm64 apple silicon
 docker pull 0xgingi/yuna-ai:rocm  # For amd gpu - coming soon
 docker pull 0xgingi/yuna-ai:cuda  # For nvidia gpu - coming soon
 ```
 
 Run the docker container:
 ```
-docker run --name yuna -p 4848:4848 --restart=always -v ~/models:/app/lib/models 0xgingi/yuna-ai:latest
+docker run --name yuna -p 4848:4848 --restart=always -v ~/models:/app/lib/models 0xgingi/yuna-ai:{tag}
 ```
 
 ### Installation
