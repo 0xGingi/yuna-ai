@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y ffmpeg
 
 RUN CMAKE_ARGS="-DLLAMA_METAL=on" pip install llama-cpp-python
 
-RUN pip install --no-cache-dir -r docker/requirements-mps.txt
+RUN pip install --no-cache-dir -r docker/requirements-metal.txt
 
 EXPOSE 4848
 

@@ -4,7 +4,6 @@ flask_login
 openai-whisper
 pydub
 transformers
-llama-cpp-python
 diffusers
 itsdangerous
 cryptography
