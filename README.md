@@ -2,6 +2,8 @@
 > Your Private Companion. The future AGI takeover starts here!
 >
 > If you like our project, please give us a star ⭐ on GitHub.
+>
+> Fork of Yuna AI to use with Docker!
 
 [![License](https://img.shields.io/github/license/semperai/amica)](https://github.com/semperai/amica/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/yukiarimo/yuna-ai?color=critical&label=Issues)](https://github.com/yukiarimo/yuna-ai/issues?q=is%3Aopen+is%3Aissue)
@@ -94,6 +96,31 @@ The following requirements need to be installed to run the code:
 
 ## Setup
 To run Yuna AI, you must install the required dependencies and start the server. Follow the instructions below to get started.
+
+### Docker
+You still need to grab the models seperately! - Check [Model Files](#model-files)
+
+Depending on your system, will need to use the appropriate docker container!
+
+Make the folders for your models:
+
+```
+mkdir ~/models
+mkdir ~/models/yuna
+mkdir ~/models/agi
+```
+Pull the docker container:
+```
+docker pull 0xgingi/yuna-ai:latest # For x86_64 CPU
+docker pull 0xgingi/yuna-ai:mps  # For arm64 apple silicon
+docker pull 0xgingi/yuna-ai:rocm  # For amd gpu - coming soon
+docker pull 0xgingi/yuna-ai:cuda  # For nvidia gpu - coming soon
+```
+
+Run the docker container:
+```
+docker run --name yuna -p 4848:4848 --restart=always -v ~/models:/app/lib/models 0xgingi/yuna-ai:latest
+```
 
 ### Installation
 To install Yuna AI, follow these steps:
