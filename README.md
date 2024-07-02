@@ -112,7 +112,7 @@ mkdir ~/models/agi
 Pull the docker container:
 ```
 docker pull 0xgingi/yuna-ai:latest # For x86_64 CPU
-docker pull 0xgingi/yuna-ai:metal  # For arm64 apple silicon - I don't have a arm64 device to build myself and docker hub doesn't support arm64 builds yet.
+docker pull 0xgingi/yuna-ai:arm64  # For arm64 --coming soon
 docker pull 0xgingi/yuna-ai:rocm  # For amd gpu --coming soon - having issues building
 docker pull 0xgingi/yuna-ai:cuda  # For nvidia gpu
 ```
