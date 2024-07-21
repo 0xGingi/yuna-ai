@@ -33,6 +33,7 @@ This `README.md` file will guide you through setting up and using Yuna with all 
 - [Getting Started](#getting-started)
   - [Requirements](#requirements)
   - [Setup](#setup)
+    - [Docker](#docker)
     - [Installation](#installation)
     - [WebUI Run](#webui-run)
     - [Yuna Modes](#yuna-modes)
@@ -112,14 +113,18 @@ mkdir ~/models/agi
 Pull the docker container:
 ```
 docker pull 0xgingi/yuna-ai:latest # For x86_64 CPU
-docker pull 0xgingi/yuna-ai:arm64  # For arm64 --coming soon
-docker pull 0xgingi/yuna-ai:rocm  # For amd gpu --coming soon - having issues building
 docker pull 0xgingi/yuna-ai:cuda  # For nvidia gpu
 ```
 
-Run the docker container: ()
+Run the docker container:
+
+CPU:
 ```
 docker run --name yuna -p 4848:4848 --restart=always -v ~/models:/app/lib/models 0xgingi/yuna-ai:latest
+```
+Nvidia: 
+```
+docker run --gpus all --name yuna -p 4848:4848 --restart=always -v ~/models:/app/lib/models 0xgingi/yuna-ai:cuda
 ```
 
 ### Installation
