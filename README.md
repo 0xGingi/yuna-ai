@@ -114,7 +114,7 @@ docker pull 0xgingi/yuna-ai:latest # For x86_64 CPU
 docker pull 0xgingi/yuna-ai:cuda  # For nvidia gpu
 ```
 
-Run the docker container (Don't Forget to change your device in "/~yuna-ai/static/config.json"!):
+Run the docker container (Don't Forget to change your device in "~/yuna-ai/static/config.json"):
 
 CPU:
 ```
