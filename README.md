@@ -99,7 +99,7 @@ The following requirements need to be installed to run the code:
 To run Yuna AI, you must install the required dependencies and start the server. Follow the instructions below to get started.
 
 ### Docker
-You still need to grab the models seperately! - Check [Model Files](#model-files)
+You still need to grab the models! - Check [Model Files](#model-files) or install from index.sh
 
 Depending on your system, will need to use the appropriate docker container!
 
