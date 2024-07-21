@@ -103,13 +103,11 @@ You still need to grab the models seperately! - Check [Model Files](#model-files
 
 Depending on your system, will need to use the appropriate docker container!
 
-Make the folders for your models:
+Clone the repo (Easiest way due to the many files that need to be persistent - can alternatively create the folders yourself and mount those):
+```
+git clone https://github.com/0xGingi/yuna-ai
+```
 
-```
-mkdir ~/models
-mkdir ~/models/yuna
-mkdir ~/models/agi
-```
 Pull the docker container:
 ```
 docker pull 0xgingi/yuna-ai:latest # For x86_64 CPU
@@ -120,11 +118,11 @@ Run the docker container:
 
 CPU:
 ```
-docker run --name yuna -p 4848:4848 --restart=always -v ~/models:/app/lib/models 0xgingi/yuna-ai:latest
+docker run --name yuna -p 4848:4848 --restart=always -v ~/yuna-ai/lib/models:/app/lib/models -v ~/yuna-ai/db:/app/db -v ~/yuna-ai/static/config.json:/app/static/config.json -v ~/yuna-ai/static/prompts.txt:/app/static/prompts.txt 0xgingi/yuna-ai:latest
 ```
 Nvidia: 
 ```
-docker run --gpus all --name yuna -p 4848:4848 --restart=always -v ~/models:/app/lib/models 0xgingi/yuna-ai:cuda
+docker run --gpus all --name yuna -p 4848:4848 --restart=always -v ~/yuna-ai/lib/models:/app/lib/models -v ~/yuna-ai/db:/app/db -v ~/yuna-ai/static/config.json:/app/static/config.json -v ~/yuna-ai/static/prompts.txt:/app/static/prompts.txt 0xgingi/yuna-ai:cuda
 ```
 
 ### Installation
