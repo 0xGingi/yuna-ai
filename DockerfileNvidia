@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r docker/requirements-nvidia.txt
 
 EXPOSE 4848
 
-CMD ["python", "index.py"]
+CMD ["python3", "index.py"]
