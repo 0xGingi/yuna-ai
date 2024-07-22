@@ -114,7 +114,7 @@ docker pull 0xgingi/yuna-ai:latest # For x86_64 CPU
 docker pull 0xgingi/yuna-ai:cuda  # For nvidia gpu
 ```
 
-Run the docker container (Don't Forget to change your device in "~/yuna-ai/static/config.json"):
+Run the docker container (Don't Forget to change your device to "cpu" or "cuda" in "~/yuna-ai/static/config.json"):
 
 CPU:
 ```
@@ -122,8 +122,18 @@ docker run --name yuna -p 4848:4848 --restart=always -v ~/yuna-ai/lib/models:/ap
 ```
 Nvidia: 
 ```
-docker run --gpus all --name yuna -p 4848:4848 --restart=always -v ~/yuna-ai/lib/models:/app/lib/models -v ~/yuna-ai/db:/app/db -v ~/yuna-ai/static/config.json:/app/static/config.json -v ~/yuna-ai/static/prompts.txt:/app/static/prompts.txt 0xgingi/yuna-ai:cuda
+docker run --gpus all --name yuna -p 4848:4848 --restart=always -v ~/yuna-ai:/app 0xgingi/yuna-ai:cuda
 ```
+
+#### Updating Docker
+```
+docker stop yuna
+docker rm yuna
+cd yuna-ai
+git pull
+docker pull 0xgingi/yuna-ai:[tag]
+```
+
 
 ### Installation
 To install Yuna AI, follow these steps:
