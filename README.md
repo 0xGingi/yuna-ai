@@ -118,7 +118,7 @@ Run the docker container (Don't Forget to change your device to "cpu" or "cuda" 
 
 CPU:
 ```
-docker run --name yuna -p 4848:4848 --restart=always -v ~/yuna-ai/lib/models:/app/lib/models -v ~/yuna-ai/db:/app/db -v ~/yuna-ai/static/config.json:/app/static/config.json -v ~/yuna-ai/static/prompts.txt:/app/static/prompts.txt 0xgingi/yuna-ai:latest
+docker run --name yuna -p 4848:4848 --restart=always -v ~/yuna-ai:/app 0xgingi/yuna-ai:latest
 ```
 Nvidia: 
 ```
